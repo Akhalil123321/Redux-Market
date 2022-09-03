@@ -8,7 +8,8 @@ const ProductListining = () => {
     const products = useSelector((state) => state)
     const dispatch = useDispatch()
     const fetchProducts = async () => {
-        const res = await axios.get('https://fakestoreapi.com/products').catch((err) => {
+        const res = await axios.get('https://fakestoreapi.com/products')
+        .catch((err) => {
             console.log('Err', err);
         })
         dispatch(setProducts(res.data));
@@ -18,7 +19,7 @@ const ProductListining = () => {
         fetchProducts()
     }, [])
     return (
-        <div className='ui grid container'>
+        <div className='cards-container'>
             <ProductComponents/>
         </div>
     )

@@ -9,10 +9,10 @@ function App() {
 return (
     <div className="App">
 		<Header/>
-		<Routes>
-				<Route path='/' element={<ProductListining/>}></Route>
-				<Route path='/product/:productId' exact component={<ProductDetailes/>}></Route>
-		</Routes>
+			<Routes>
+					<Route path='/' element={<ProductListining/>}></Route>
+					<Route path='product/:productId' element={<ProductDetailes/>}></Route>
+			</Routes>
     </div>
 );
 }
