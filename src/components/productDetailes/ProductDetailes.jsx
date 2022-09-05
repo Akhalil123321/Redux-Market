@@ -32,10 +32,13 @@ const ProductDetailes = () => {
             <div>
                 {product.title}
                 <div className='icon-cont'>
-                <FaTag className='icon'/>
-                <div className='extend'></div>
-                <p className='detaile-price'>$ {product.price}</p>
+                    <FaTag className='icon'/>
+                    <div className='extend'></div>
+                    <p className='detaile-price'>$ {product.price}</p>
                 </div>
+                <div className='detailes-category'>{product.category}</div>
+                <p className='detailes-description'>{product.description}</p>
+                <button className='detailes-button'>Add To Chart</button>
             </div>
         </div>
     )
