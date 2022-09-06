@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import {selectedProducts} from '../../redux/actions/ProductAction'
+import {selectedProducts, removeSelectedProducts} from '../../redux/actions/ProductAction'
 import { FaTag } from 'react-icons/fa';
 import './productDetailes.css'
 
@@ -21,7 +22,10 @@ const ProductDetailes = () => {
         dispatch(selectedProducts(res.data))
     }
     React.useEffect(() =>{
-        if(productId && productId !== '')fetchProductDetailes()
+        if(productId && productId !== "") fetchProductDetailes(productId)
+        return() => {
+            dispatch(removeSelectedProducts())
+        }
     } ,[productId])
     
     return (
@@ -30,7 +34,7 @@ const ProductDetailes = () => {
                 <img src={product.image} alt={product.title} />
             </div>
             <div>
-                {product.title}
+                <p className='p-title'>{product.title}</p>
                 <div className='icon-cont'>
                     <FaTag className='icon'/>
                     <div className='extend'></div>
