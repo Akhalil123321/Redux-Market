@@ -4,6 +4,14 @@
 
 <a href='https://redux-store.pages.dev/'><img src='public/redux-store-site.png' width=1000vw/></a>
 
+## Computer View
+
+<img src='public/computer-view.png' />
+
+## detailes View
+
+<img src='public/detailes-view.png'/>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
